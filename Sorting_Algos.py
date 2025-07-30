@@ -18,7 +18,7 @@ def bubble_sort(list):
                 list[j] = list[j+1]
                 list[j+1] = temp
     print(list)
-    
+
 #Selection Sort
 def selection_sort(list):
     for scanIndex in range(0, len(list)):
@@ -50,11 +50,23 @@ algo_selection = int(input('Select the algo to run: '))
 match algo_selection :
     case 1:
         bubble_sort(myIntList)
-    
     case 2:
         selection_sort(myIntList)
-
-
-
-
-
+    case 3:
+        print('TODO')
+    case 4: 
+        print('TODO')
+    case 5:
+        print('TODO')
+    case 6:
+        print('TODO')
+    case 7:
+        print('TODO')
+    case 8:
+        print('TODO')
+    case 9:
+        print('TODO')
+    case 10: 
+        print('TODO')
+    case _:
+        print('Please us a valid selection.')
