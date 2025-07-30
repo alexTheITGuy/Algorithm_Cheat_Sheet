@@ -45,7 +45,7 @@ print('8 = Radix Sort')
 print('9 = Bucket Sort')
 print('10 = Shell Sort')
 print()
-
+17
 algo_selection = int(input('Select the algo to run: '))
 match algo_selection :
     case 1:
@@ -69,4 +69,5 @@ match algo_selection :
     case 10: 
         print('TODO')
     case _:
-        print('Please us a valid selection.')
+        print('Please use a valid selection.')
+
