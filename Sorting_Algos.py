@@ -1,5 +1,6 @@
 import random 
 
+#Creates an unordered list of however many ints.
 myIntList = []
 number = 0
 
@@ -19,11 +20,23 @@ def bubble_sort(list):
                 list[j+1] = temp
     print(list)
 
+#Menu to Select Algo to run... maybe later ill add run time information. 
+print('1 = Bubble Sort')
+print('2 = Selection Sort')
+print('3 = Insertion Sort')
+print('4 = Merge Sort')
+print('5 = Quick Sort')
+print('6 = Heap Sort')
+print('7 = Counting Sort')
+print('8 = Radix Sort')
+print('9 = Bucket Sort')
+print('10 = Shell Sort')
+print()
 
-bubble_sort(myIntList)
-
-
-
+algo_selection = int(input('Select the algo to run: '))
+match algo_selection :
+    case 1:
+        bubble_sort(myIntList)
 
 
 
