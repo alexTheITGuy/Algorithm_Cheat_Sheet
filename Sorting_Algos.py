@@ -48,9 +48,55 @@ def insertion_sort(list):
         list[j + 1] = key
     print(list)
 
+#Merge Sort
+def merge(list, left, mid, right):
+    n1 = mid - left + 1
+    n2 = right - mid
+
+    #temp arrays for left and right
+    L = [0] * n1
+    R = [0] * n2
+
+    for i in range(n1):
+        L[i] = list[left + i]
+    for j in range(n2):
+        R[j] = list[mid + 1 + j]
+    
+    i = 0
+    j = 0
+    k = left
+
+    while i < n1 and j < n2:
+        if L[i] <= R[j]:
+            list[k] = L[i]
+            i += 1
+        else:
+            list[k] = R[j]
+            j += 1
+        k += 1
+
+    while i < n1:
+        list[k] = L[i]
+        i += 1
+        k += 1
+
+    while j < n2:
+        list[k] = R[j]
+        j += 1
+        k += 1
+
+def merge_sort(list, left, right):
+    if left < right:
+        mid = (left + right) // 2
+
+        merge_sort(list, left, mid)
+        merge_sort(list, mid + 1, right)
+        merge(list, left, mid, right)
+    
+
 #Menu to Select Algo to run
-print('1 = Bubble Sort O(n^2)')
-print('2 = Selection Sort O(n^2)')
+print('1 = Bubble Sort')
+print('2 = Selection Sort')
 print('3 = Insertion Sort')
 print('4 = Merge Sort')
 print('5 = Quick Sort')
@@ -70,7 +116,9 @@ match algo_selection :
     case 3:
         insertion_sort(myIntList)
     case 4: 
-        print('TODO')
+        merge_sort(myIntList, 0, len(myIntList) - 1)
+        print(myIntList)
+        print()
     case 5:
         print('TODO')
     case 6:
