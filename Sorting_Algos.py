@@ -4,9 +4,12 @@ import random
 myIntList = []
 number = 0
 
-for i in range(100):
+for i in range(20):
     random_integer = random.randint(1, 10)
     myIntList.append(random_integer)
+
+print(myIntList)
+print()
 
 #Bubble Sort
 def bubble_sort(list):
@@ -33,7 +36,19 @@ def selection_sort(list):
 
                 print(list)
 
-#Menu to Select Algo to run... maybe later ill add run time information. 
+#Insertion Sort
+def insertion_sort(list):
+    for i in range(1, len(list)):
+        key = list[i]
+        j = i - 1
+
+        while j>= 0 and key < list [j]:
+            list[j + 1] = list[j]
+            j -= 1
+        list[j + 1] = key
+    print(list)
+
+#Menu to Select Algo to run
 print('1 = Bubble Sort O(n^2)')
 print('2 = Selection Sort O(n^2)')
 print('3 = Insertion Sort')
@@ -53,7 +68,7 @@ match algo_selection :
     case 2:
         selection_sort(myIntList)
     case 3:
-        print('TODO')
+        insertion_sort(myIntList)
     case 4: 
         print('TODO')
     case 5:
@@ -70,4 +85,3 @@ match algo_selection :
         print('TODO')
     case _:
         print('Please use a valid selection.')
-
